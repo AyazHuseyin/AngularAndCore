@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "ParentId": 0,
+    "MenuName": "User",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": ""
+  },
+  {
+    "Id": 2,
+    "ParentId": 1,
+    "MenuName": "Users",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": "UsersComponent"
+  },
+  {
+    "Id": 3,
+    "ParentId": 1,
+    "MenuName": "User Add",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": "UseraddComponent"
+  },
+  {
+    "Id": 4,
+    "ParentId": 0,
+    "MenuName": "About",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": "AboutComponent"
+  },
+  {
+    "Id": 5,
+    "ParentId": 0,
+    "MenuName": "Contact",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": "ContactComponent"
+  },
+  {
+    "Id": 6,
+    "ParentId": 0,
+    "MenuName": "Home",
+    "Lock": true,
+    "MenuCode": "",
+    "Url": "DefaultComponent"
+  }
+]

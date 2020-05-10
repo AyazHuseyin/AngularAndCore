@@ -1,0 +1,54 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">AngularAndCore</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+  </nav>
+</header>
+
+<div class="wrapper">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Sidebar</h3>
+    </div>
+    <ng-container *ngIf="sidebarMenus.length > 0 ">
+      <ul class="list-unstyled components">
+        <p>Test Project</p>
+        <li class="" *ngFor="let menu of sidebarMenus">
+          <ng-container *ngIf="menu.childMenus.length > 0">
+            <a *ngIf="menu.childMenus.length > 0" href="#{{menu.menuName}}" (click)="_toggleSidebar(menu.menuName)" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{menu.menuName}}</a>
+            <ul *ngIf="menu.childMenus.length > 0" class="collapse list-unstyled" id="{{menu.menuName}}">
+              <li *ngFor="let chlMenu of menu.childMenus">
+                <a href="#{{menu.menuName}}/{{chlMenu.menuName}}" (click)="_callChildComponent(chlMenu.url)" >{{chlMenu.menuName}}</a>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-container *ngIf="menu.childMenus.length == 0">
+            <a href="#{{menu.menuName}}" (click)="_callChildComponent(menu.url)">{{menu.menuName}}</a>
+          </ng-container>
+        </li>
+      </ul>
+    </ng-container>
+    
+  </nav>
+  <div id="content">
+    <div class="container">
+      <main role="main" class="pb-3">
+        <div>
+          <app-home [ads]="ads" [componentProp]="componentProp"></app-home>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
